@@ -1,20 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Java Exception Learning Hub</title>
+<title>User-Defined Exceptions & Stack Trace in Java</title>
 </head>
 <body>
 
-<h1>Java Exception Learning Hub</h1
+<h1>User-Defined Exceptions & Stack Trace in Java</h1>
 
 <h2>What is an Exception?</h2>
-<p>An exception is an error that occurs during program execution.</p>
- 
+<p>An exception is an error or unexpected event that occurs during program execution.</p>
+
 <h2>User-Defined Exception</h2>
-<p>A user-defined exception is a custom exception created by the programmer.</p>
+<p>A user-defined exception is a custom exception created by the programmer by extending the Exception class.</p>
+
+<h3>Example Program</h3>
+<pre>
+class MyException extends Exception {
+    MyException(String msg) {
+        super(msg);
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        try {
+            throw new MyException("Custom Exception");
+        } catch (MyException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
+</pre>
 
 <h2>Stack Trace</h2>
 <p>A stack trace shows the sequence of method calls that led to an exception.</p>
+
+<h3>Example Output</h3>
+<pre>
+Exception in thread "main"
+java.lang.ArithmeticException: / by zero
+</pre>
+
+<h2>Advantages</h2>
+<ul>
+<li>Improves error handling.</li>
+<li>Makes debugging easier.</li>
+<li>Provides custom error messages.</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>User-defined exceptions help developers create meaningful error messages, while stack traces help identify the source of errors for easier debugging.</p>
 
 </body>
 </html>
